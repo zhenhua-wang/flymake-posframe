@@ -102,7 +102,12 @@ Only the `foreground' is used in this face."
                                  (:warning flymake-posframe-warning-prefix)
                                  (:note flymake-posframe-note-prefix))
                                'face 'warning)
-			   (flymake--diag-text diag)))
+			   (flymake--diag-text diag))
+           :override-parameters '((tab-bar-mode . 0)
+                                  (tab-bar-format . nil)
+                                  (tab-line-format . nil)
+                                  (tab-bar-lines . 0)
+                                  (tab-bar-lines-keep-state . 0)))
 
 	  (let ((current-posframe-frame
 		 (buffer-local-value 'posframe--frame (get-buffer flymake-posframe-buffer))))
